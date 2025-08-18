@@ -1,4 +1,4 @@
-@import url('./fonts/fonts.css');
+@import url('./fonts/style.css');
 
 :root {
   font-family: 'Raleway', system-ui, Helvetica, Arial, sans-serif;
@@ -17,7 +17,7 @@
 
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: 'RalewayVariable', serif;
+    font-family: 'RalewayVariable', sans-serif;
   }
 }
 
@@ -39,8 +39,9 @@ body {
 }
 
 h1 {
-  font-family: 'Fredericka the Great', serif;
-  font-size: 3.2em;
+  font-family: 'Zuume Rough', sans-serif;
+  font-weight: 700; /*Must be 700 to use it*/
+  font-size: 5.8em;
   line-height: 1.1;
 }
 

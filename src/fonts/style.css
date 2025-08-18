@@ -12,11 +12,12 @@ h1 {
   }
 } */
 
-/* Static Fredericka the Great fonts since it only has one tff */
+/* Static Zuume Rough fonts (woff2 for optimal web usage and ttf as backup) */
 @font-face {
-  font-family: 'Fredericka the Great';
-  src: url('./Fredericka_the_Great/FrederickatheGreat-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Zuume Rough';
+  src: url('./Zuume_Rough/ZuumeRough-Bold.woff2') format('woff2'),
+      url('./Zuume_Rough/ZuumeRough-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
