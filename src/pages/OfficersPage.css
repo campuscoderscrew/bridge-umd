@@ -1,0 +1,185 @@
+/* OfficersPage.css */
+
+/* Styles just for the Officers page */
+.officers-header {
+  background-color: red;
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem; /* gives header height */
+  background: linear-gradient(180deg, #0a2a5e 0%, #1f4c9c 100%);
+}
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;        /* span the viewport */
+}
+
+/* Optional: prevents a 1px horizontal scrollbar on some OS/browser combos */
+body { overflow-x: hidden; }
+
+.officers-header h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.officers-header img {
+  display: block;
+  max-height: 80px;
+  margin: 1rem auto 0;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+
+/* Card tweaks if you want them */
+.officer-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.officer-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Make a section escape any centered/max-width parent */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+/* Optional: avoid horizontal scrollbar from full-bleed */
+body { overflow-x: hidden; }
+
+/* Water gradient bar below the header */
+.water-band {
+  position: relative;
+  height: 72px; /* adjust to taste: 48–120px */
+  /* Mint→transparent→page bg (#f7fafc) for a smooth dissolve */
+  background: linear-gradient(
+    180deg,
+    #1742c2 0%,
+    rgba(68, 205, 255, 0.65) 40%,
+    rgba(139, 230, 201, 0.15) 75%,
+    #f7fafc 100%
+  );
+}
+
+/* (Optional) subtle “ripple” sheen */
+.water-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 120%, rgba(255,255,255,0.35) 0 30%, transparent 31%),
+    radial-gradient(ellipse at 75% 120%, rgba(255,255,255,0.35) 0 30%, transparent 31%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.officers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem; /* = Tailwind gap-6 */
+}
+
+/* Optional: go 3 columns on wider screens */
+@media (min-width: 768px) {
+  .officers-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card: border a bit stronger, overflow hidden keeps ribbon clipped to radius */
+.officer-card {
+  --ribbon-w: 64px;                 /* adjust banner width here */
+  position: relative;
+  border: 2px solid #cbd5e1;        /* more visible */
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  overflow: hidden;                  /* ensures banner hugs rounded corners */
+  padding: 18px 20px;                /* base padding */
+  padding-left: calc(20px + var(--ribbon-w)); /* make room for left banner */
+}
+.officer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  border-color: #94a3b8;            /* slate-400 on hover */
+}
+.officer-card:focus-within {
+  outline: 2px solid #8be6c9;
+  outline-offset: 2px;
+}
+
+/* LEFT BLUE BANNER — absolute, full height, flush to the edge */
+.officer-card__ribbon {
+  position: absolute;
+  inset: 0 auto 0 0;                /* top:0; bottom:0; left:0; */
+  width: var(--ribbon-w);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Lighter blue gradient so black text stays readable */
+  background: linear-gradient(180deg, #1bcfb1 0%, #8be6c9ff 100%);
+  /* subtle inner divider toward the content */
+  box-shadow: inset -1px 0 0 rgba(15, 23, 42, 0.08);
+}
+.officer-card__ribbon span {
+  writing-mode: vertical-rl;        /* vertical text */
+  transform: rotate(180deg);        /* read top→bottom on the left */
+  font-weight: 800;
+  font-size: 0.75rem;               /* text-xs */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;                   /* BLACK text as requested */
+}
+
+/* Content area stays grid for avatar + details */
+.officer-card__content {
+  display: grid;
+  grid-template-columns: 72px 1fr;  /* avatar | text */
+  gap: 14px;
+  align-items: center;
+}
+
+/* Avatar + text (unchanged from earlier) */
+.officer-card__avatar {
+  width: 64px; height: 64px;
+  border-radius: 9999px;
+  display: grid; place-items: center;
+  border: 2px solid #49e6b4;
+  background: #f8fafc;
+  color: #0a2a5e;
+  overflow: hidden;
+}
+.officer-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.officer-card__title h3 {
+  margin: 0; font-weight: 700; font-size: 1.125rem; color: #0f172a; line-height: 1.25;
+}
+.officer-card__title .sub { margin: 2px 0 0; font-size: 0.875rem; color: #334155; }
+
+.officer-card__meta {
+  margin-top: 10px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px;
+}
+.officer-card__meta dt { font-weight: 600; font-size: 0.875rem; color: #0f172a; }
+.officer-card__meta dd { margin: 2px 0 0; font-size: 0.875rem; color: #475569; }
+.officer-card__meta .full { grid-column: 1 / -1; }
+
+/* Optional: narrower banner on very small screens */
+@media (max-width: 420px) {
+  .officer-card { --ribbon-w: 48px; }
+}
