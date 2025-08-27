@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Copyright from './components/Copyright';
 import NavigationBar
  from './components/NavigationBar';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </main>
+      <Copyright />
     </Router>
   )
 }
