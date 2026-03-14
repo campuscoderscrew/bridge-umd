@@ -1,5 +1,7 @@
 @import url('./fonts/style.css');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
+@import "tailwindcss";
 :root {
   font-family: 'Raleway', system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -32,16 +34,15 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
   font-family: 'Zuume Rough', sans-serif;
   font-weight: 700; /*Must be 700 to use it*/
-  font-size: 5.8em;
+  font-size: clamp(2rem, 8vw, 5.8em);
   line-height: 1.1;
 }
 
@@ -52,7 +53,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: white;
+    background-color: #2E4052;
   cursor: pointer;
   transition: border-color 0.25s;
 }
