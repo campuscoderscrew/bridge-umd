@@ -37,7 +37,7 @@ const officers = [
   },
   {
     name: "Emma Gross",
-    role: "VpP of Event Planning",
+    role: "VP of Event Planning",
     classYear: "202X",
     major: "Animlas Science",
     minor: undefined,
@@ -48,28 +48,44 @@ const officers = [
 
 export default function OfficersPage() {
   return (
-    <div style={{ minHeight: "100vh", fontFamily: "Raleway, sans-serif", backgroundColor: "#f5f5f5", display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        fontFamily: "Raleway, sans-serif",
+        backgroundColor: "#f5f5f5",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {/* ── HEADER with bridge graphic ── */}
       <div className="relative text-center py-10 sm:py-16" style={{ backgroundColor: "#85CAC0", color: "#2E4052" }}>
-
-        <h1 className="text-xs font-bold mb-6" style={{ fontFamily: "'Fredericka the Great', serif", color: "#2E4052" }}>
+        <h1
+          className="text-xs font-bold mb-6"
+          style={{ fontFamily: "'Fredericka the Great', serif", color: "#2E4052" }}
+        >
           Officers
         </h1>
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "120px" }}>
           {/* Water */}
-          <img src="/src/assets/Rectangle 355.png" alt="" style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "30px", objectFit: "cover" }} />
+          <img
+            src="/src/assets/Rectangle 355.png"
+            alt=""
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "30px", objectFit: "cover" }}
+          />
           {/* Bridge sitting above water */}
-          <div style={{
-            position: "absolute",
-            bottom: "18px",
-            left: 0,
-            width: "100%",
-            height: "60px",
-            backgroundImage: "url('/src/assets/truss_bridge 6.png')",
-            backgroundRepeat: "repeat-x",
-            backgroundSize: "auto 100%",
-            backgroundPosition: "bottom",
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "18px",
+              left: 0,
+              width: "100%",
+              height: "60px",
+              backgroundImage: "url('/src/assets/truss_bridge 6.png')",
+              backgroundRepeat: "repeat-x",
+              backgroundSize: "auto 100%",
+              backgroundPosition: "bottom",
+            }}
+          />
         </div>
       </div>
 
@@ -77,21 +93,31 @@ export default function OfficersPage() {
       <div className="px-4 sm:px-8 pt-10 pb-16 w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {officers.map((o, i) => (
-            <div key={i} className="flex items-stretch bg-white rounded-2xl shadow-sm overflow-hidden">
+            <div
+              key={i}
+              className="flex items-stretch bg-white rounded-2xl shadow-sm overflow-hidden"
+              style={{ height: "160px" }}
+            >
               {/* Role sidebar — sideways text to the left of the photo */}
               <div
                 className="flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: o.role === "President" ? "#5CB8D6" : "#85CAC0", width: "clamp(22px, 5vw, 28px)" }}
+                style={{
+                  backgroundColor: o.role === "President" ? "#5CB8D6" : "#85CAC0",
+                  width: "clamp(36px, 7vw, 48px)",
+                  overflow: "hidden",
+                }}
               >
                 <span
                   style={{
                     color: "#000000",
-                    fontSize: o.role.length > 20 ? "0.4rem" : o.role.length > 10 ? "0.5rem" : "0.55rem",
+                    fontSize: "0.7rem",
                     fontWeight: 700,
                     letterSpacing: "0.08em",
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
-                    whiteSpace: "nowrap",
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    textAlign: "center",
                   }}
                 >
                   {o.role}
@@ -111,12 +137,24 @@ export default function OfficersPage() {
                   )}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-bold text-sm break-words" style={{ color: "#000000" }}>{o.name}</h3>
+                  <h3 className="font-bold text-sm break-words" style={{ color: "#000000" }}>
+                    {o.name}
+                  </h3>
                   <div className="flex flex-col gap-y-0.5 mb-1">
-                    <span className="text-xs" style={{ color: "#000000" }}>Class of {o.classYear}</span>
-                    <span className="text-xs" style={{ color: "#000000" }}>{o.major} Major</span>
-                    {o.minor && <span className="text-xs" style={{ color: "#000000" }}>{o.minor} Minor</span>}
-                    <span className="text-xs" style={{ color: "#000000" }}>Fav. Game: {o.favGame}</span>
+                    <span className="text-xs" style={{ color: "#000000" }}>
+                      Class of {o.classYear}
+                    </span>
+                    <span className="text-xs" style={{ color: "#000000" }}>
+                      {o.major} Major
+                    </span>
+                    {o.minor && (
+                      <span className="text-xs" style={{ color: "#000000" }}>
+                        {o.minor} Minor
+                      </span>
+                    )}
+                    <span className="text-xs" style={{ color: "#000000" }}>
+                      Fav. Game: {o.favGame}
+                    </span>
                   </div>
                 </div>
               </div>

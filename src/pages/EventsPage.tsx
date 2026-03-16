@@ -76,13 +76,7 @@ const events = [
   },
 ];
 
-const tagColors: Record<string, string> = {
-  Politics: "#c8dce8",
-  Health: "#c8e8d8",
-  Policy: "#e8d8c8",
-  Law: "#d8c8e8",
-  Science: "#e8e8c8",
-};
+
 
 export default function EventsPage() {
   const [tab, setTab] = useState<"upcoming" | "past" | "all">("upcoming");
@@ -102,13 +96,14 @@ export default function EventsPage() {
       <div
         className="py-8 px-4 sm:px-10 text-center text-white"
         style={{
-          background: "linear-gradient(0deg, #FFFFFF 0%, rgba(133, 202, 192, 0.9) 5.77%, rgba(133, 202, 192, 0.9) 94.71%, #85CAC0 100%), url('/src/assets/adam2 1.png')",
+          background:
+            "linear-gradient(0deg, #FFFFFF 0%, rgba(133, 202, 192, 0.9) 5.77%, rgba(133, 202, 192, 0.9) 94.71%, #85CAC0 100%), url('/src/assets/adam2 1.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: "'Zuume Rough', sans-serif", color: "#85CAC0" }}>
+        <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: "'Zuume Rough', sans-serif", color: "#2E4052" }}>
           Events
         </h1>
         {/* Search */}
@@ -133,7 +128,12 @@ export default function EventsPage() {
           <button
             onClick={() => setTab("all")}
             className="px-5 py-1.5 rounded-full text-sm font-semibold"
-            style={{ backgroundColor: tab === "all" ? "#2E4052" : "transparent", color: "#fff", border: "1.5px solid #fff", cursor: "pointer" }}
+            style={{
+              backgroundColor: tab === "all" ? "#2E4052" : "transparent",
+              color: "#fff",
+              border: "1.5px solid #fff",
+              cursor: "pointer",
+            }}
           >
             All Events
           </button>
@@ -167,42 +167,60 @@ export default function EventsPage() {
             >
               {/* Event badge */}
               {(i === nextEventIndex && ev.upcoming) || !ev.upcoming ? (
-                <div style={{ position: "absolute", top: 0, right: 12, display: "flex", flexDirection: "column", alignItems: "center", zIndex: 10 }}>
-                  <div style={{
-                    backgroundColor: ev.upcoming ? "#85CAC0" : "#2E4052",
-                    color: ev.upcoming ? "#2E4052" : "#ffffff",
-                    fontSize: "0.55rem",
-                    fontWeight: 700,
-                    padding: "8px 10px",
-                    letterSpacing: "0.05em",
-                  }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 12,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    zIndex: 10,
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: ev.upcoming ? "#85CAC0" : "#2E4052",
+                      color: ev.upcoming ? "#2E4052" : "#ffffff",
+                      fontSize: "0.55rem",
+                      fontWeight: 700,
+                      padding: "8px 10px",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
                     {ev.upcoming ? "NEXT" : "PAST"}
                   </div>
-                  <div style={{
-                    width: 0,
-                    height: 0,
-                    borderLeft: "18px solid transparent",
-                    borderRight: "18px solid transparent",
-                    borderBottom: "7px solid white",
-                    marginTop: "-7px",
-                  }} />
+                  <div
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderLeft: "18px solid transparent",
+                      borderRight: "18px solid transparent",
+                      borderBottom: "7px solid white",
+                      marginTop: "-7px",
+                    }}
+                  />
                 </div>
               ) : null}
 
               {/* Date & Time header */}
-              <div
-                className="w-full flex items-center px-4 py-3 gap-2"
-                style={{ backgroundColor: "#ffffff" }}
-              >
-                <div className="text-xs font-normal" style={{ color: "#2E4052" }}>{ev.month} {ev.date}</div>
-                <div className="text-xs font-normal" style={{ color: "#2E4052" }}>| {ev.time}</div>
+              <div className="w-full flex items-center px-4 py-3 gap-2" style={{ backgroundColor: "#ffffff" }}>
+                <div className="text-xs font-normal" style={{ color: "#2E4052" }}>
+                  {ev.month} {ev.date}
+                </div>
+                <div className="text-xs font-normal" style={{ color: "#2E4052" }}>
+                  | {ev.time}
+                </div>
               </div>
 
               {/* Card body */}
               <div className="p-3 flex flex-col flex-1">
-                <p className="text-xs font-bold mb-0.5" style={{ color: "#2E4052" }}>{ev.title}</p>
+                <p className="text-xs font-bold mb-0.5" style={{ color: "#2E4052" }}>
+                  {ev.title}
+                </p>
                 <p className="text-xs mb-2" style={{ color: "#6a8090" }}>
-                  Join us for an open discussion exploring multiple perspectives on this topic. All viewpoints are welcome as we work together to bridge the gap and foster meaningful dialogue on campus...
+                  Join us for an open discussion exploring multiple perspectives on this topic. All viewpoints are
+                  welcome as we work together to bridge the gap and foster meaningful dialogue on campus...
                 </p>
                 <a
                   href="https://maps.google.com/?q=Tawes+Hall,+University+of+Maryland,+College+Park,+MD"
@@ -214,7 +232,12 @@ export default function EventsPage() {
                   {ev.location}
                 </a>
                 <div className="flex gap-2 mt-auto">
-                  <a href="https://www.instagram.com/bridgeumd/" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <a
+                    href="https://www.instagram.com/bridgeumd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
                     <button
                       className="w-full py-1 rounded-lg font-semibold text-white"
                       style={{ backgroundColor: "#2E4052", border: "none", cursor: "pointer", fontSize: "0.6rem" }}
