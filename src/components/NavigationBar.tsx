@@ -13,17 +13,31 @@ export default function NavigationBar() {
   return (
     <nav
       className="w-full flex items-center justify-between py-3 sticky top-0 z-50"
-      style={{ paddingLeft: "clamp(0.75rem, 4vw, 6rem)", paddingRight: "clamp(0.75rem, 4vw, 6rem)", backgroundColor: "#85CAC0", fontFamily: "'Raleway', sans-serif" }}
+      style={{
+        paddingLeft: "clamp(0.75rem, 4vw, 6rem)",
+        paddingRight: "clamp(0.75rem, 4vw, 6rem)",
+        backgroundColor: "#85CAC0",
+        fontFamily: "'Raleway', sans-serif",
+      }}
     >
       {/* Logo */}
       <Link
         to="/"
-        className="no-underline flex-shrink-0"
+        className="no-underline flex-shrink-0 flex items-center gap-1"
         style={{ color: "#2E4052", textDecoration: "none", fontSize: "clamp(0.9rem, 3vw, 1.125rem)" }}
       >
         <span style={{ fontWeight: 700 }}>Bridge</span>
         <span style={{ fontWeight: 400 }}>UMD</span>
-        <sup style={{ fontSize: "0.5rem" }}>™</sup>
+        <img
+          src="/src/assets/Screenshot 2026-03-16 181502.png"
+          alt=""
+          style={{
+            height: "clamp(0.7rem, 1.5vw, 1rem)",
+            width: "auto",
+            filter: "invert(1)",
+            mixBlendMode: "multiply",
+          }}
+        />
       </Link>
 
       {/* Nav links */}

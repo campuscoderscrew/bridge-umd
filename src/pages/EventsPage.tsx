@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const events = [
   {
@@ -79,7 +80,11 @@ const events = [
 
 
 export default function EventsPage() {
-  const [tab, setTab] = useState<"upcoming" | "past" | "all">("upcoming");
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  const [searchParams] = useSearchParams();
+  const initialTab = (searchParams.get("tab") as "upcoming" | "past" | "all") ?? "upcoming";
+  const [tab, setTab] = useState<"upcoming" | "past" | "all">(initialTab);
   const [search, setSearch] = useState("");
 
   const filtered = events.filter(

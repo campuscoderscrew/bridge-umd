@@ -23,22 +23,31 @@ export default function HomePage() {
   return (
     <div className="font-sans text-white" style={{ backgroundColor: "#1a2a3a" }}>
       {/* ── HERO ── */}
-      <section className="relative w-full" style={{ backgroundColor: "#85CAC0" }}>
-        {/* Bridge image with rounded corners and separation from edges */}
+      <section className="w-full relative overflow-hidden" style={{ backgroundColor: "#85CAC0", minHeight: "65vh" }}>
+        {/* Bridge image pinned to bottom, behind content */}
         <img
           src="/src/assets/bay_bridge_with_land.png"
           alt=""
-          style={{ width: "100%", height: "auto", display: "block", maxHeight: "70vh", objectFit: "cover" }}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+            objectPosition: "top",
+            zIndex: 0,
+          }}
         />
 
-        {/* Text content — scales with the section */}
+        {/* Text content */}
         <div
-          className="absolute top-0 left-0 w-full h-full flex items-start z-10"
-          style={{ padding: "clamp(0.5rem, 4vw, 3rem)", paddingTop: "clamp(1rem, 5vw, 5rem)" }}
+          className="flex items-start relative"
+          style={{ padding: "clamp(0.2rem, 1vw, 0.75rem)", paddingTop: "clamp(0.3rem, 1.5vw, 1.25rem)", paddingLeft: "clamp(1rem, 4vw, 3rem)", zIndex: 1 }}
         >
           <div style={{ maxWidth: "clamp(200px, 45vw, 600px)" }}>
             <h1
-              className="font-bold leading-none mb-2"
+              className="font-bold leading-none mb-1 sm:mb-2"
               style={{
                 fontFamily: "'Zuume Rough', sans-serif",
                 color: "#fff",
@@ -48,10 +57,10 @@ export default function HomePage() {
             >
               Bridge the Gap
             </h1>
-            <p className="mb-4" style={{ color: "#000000", fontSize: "clamp(0.6rem, 1.5vw, 1.1rem)" }}>
+            <p className="mb-2 sm:mb-4" style={{ color: "#000000", fontSize: "clamp(0.6rem, 1.5vw, 1.1rem)" }}>
               Join the movement to reshape campus conversations.
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1 sm:gap-2">
               <Link to="/events">
                 <button
                   className="rounded-xl font-semibold text-white"
@@ -72,7 +81,9 @@ export default function HomePage() {
                   border: "none",
                   padding: "clamp(0.3rem, 1vw, 0.75rem) clamp(0.6rem, 2vw, 1.5rem)",
                   fontSize: "clamp(0.55rem, 1.2vw, 1rem)",
+                  cursor: "pointer",
                 }}
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Contact Us
               </button>
@@ -86,7 +97,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-start">
           {/* Placeholder image box */}
           <div
-            className="w-full md:w-1/2 h-48 sm:h-64 flex-shrink-0 rounded-lg"
+            className="w-full md:w-1/2 h-64 sm:h-80 md:h-96 flex-shrink-0 rounded-lg"
             style={{ backgroundColor: "#c0c0c0" }}
           />
           <div>
@@ -257,7 +268,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="flex justify-center mt-8">
-            <Link to="/events">
+            <Link to="/events?tab=all">
               <button
                 className="px-8 py-2 rounded-full text-sm font-semibold text-white"
                 style={{ backgroundColor: "#2E4052", border: "none", cursor: "pointer" }}
@@ -316,6 +327,7 @@ export default function HomePage() {
 
       {/* ── FOOTER ── */}
       <footer
+        id="contact"
         className="py-12 px-4 sm:px-10 text-center text-white"
         style={{
           background: "linear-gradient(180deg, #408ABF 0%, #2E4052 100%)",
