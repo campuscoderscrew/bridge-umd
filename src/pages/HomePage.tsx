@@ -26,7 +26,7 @@ export default function HomePage() {
       <section className="w-full relative overflow-hidden" style={{ backgroundColor: "#85CAC0", minHeight: "65vh" }}>
         {/* Bridge image pinned to bottom, behind content */}
         <img
-          src="/src/assets/bay_bridge_with_land.png"
+          src="/bay_bridge_with_land.png"
           alt=""
           style={{
             position: "absolute",
@@ -135,7 +135,7 @@ export default function HomePage() {
       {/* ── EVENTS PREVIEW ── */}
       <section style={{ backgroundColor: "#ffffff" }} className="text-gray-800">
         <img
-          src="/src/assets/Vector 22.png"
+          src="/Vector 22.png"
           alt=""
           style={{ display: "block", width: "100vw", maxWidth: "100vw", height: "auto" }}
         />
@@ -287,7 +287,7 @@ export default function HomePage() {
               left: 0,
               width: "100%",
               height: "60px",
-              backgroundImage: "url('/src/assets/Vector 27.png')",
+              backgroundImage: "url('/Vector 27.png')",
               backgroundRepeat: "repeat-x",
               backgroundSize: "auto 100%",
               backgroundPosition: "0px bottom",
@@ -301,7 +301,7 @@ export default function HomePage() {
               left: 0,
               width: "100%",
               height: "60px",
-              backgroundImage: "url('/src/assets/Vector 27.png')",
+              backgroundImage: "url('/Vector 27.png')",
               backgroundRepeat: "repeat-x",
               backgroundSize: "auto 100%",
               backgroundPosition: "80px bottom",
@@ -315,7 +315,7 @@ export default function HomePage() {
               left: 0,
               width: "100%",
               height: "60px",
-              backgroundImage: "url('/src/assets/Vector 27.png')",
+              backgroundImage: "url('/Vector 27.png')",
               backgroundRepeat: "repeat-x",
               backgroundSize: "auto 100%",
               backgroundPosition: "160px bottom",

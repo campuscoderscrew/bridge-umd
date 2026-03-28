@@ -102,7 +102,7 @@ export default function EventsPage() {
         className="py-8 px-4 sm:px-10 text-center text-white"
         style={{
           background:
-            "linear-gradient(0deg, #FFFFFF 0%, rgba(133, 202, 192, 0.9) 5.77%, rgba(133, 202, 192, 0.9) 94.71%, #85CAC0 100%), url('/src/assets/adam2 1.png')",
+            "linear-gradient(0deg, #FFFFFF 0%, rgba(133, 202, 192, 0.9) 5.77%, rgba(133, 202, 192, 0.9) 94.71%, #85CAC0 100%), url('/adam2 1.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

@@ -68,7 +68,7 @@ export default function OfficersPage() {
         <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "120px" }}>
           {/* Water */}
           <img
-            src="/src/assets/Rectangle 355.png"
+            src="/Rectangle 355.png"
             alt=""
             style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "30px", objectFit: "cover" }}
           />
@@ -80,7 +80,7 @@ export default function OfficersPage() {
               left: 0,
               width: "100%",
               height: "60px",
-              backgroundImage: "url('/src/assets/truss_bridge 6.png')",
+              backgroundImage: "url('/truss_bridge 6.png')",
               backgroundRepeat: "repeat-x",
               backgroundSize: "auto 100%",
               backgroundPosition: "bottom",

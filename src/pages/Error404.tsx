@@ -9,7 +9,7 @@ export default function Error404() {
       {/* Bridge silhouette */}
       <div
         className="w-full max-w-md h-24 bg-contain bg-center bg-no-repeat mb-8"
-        style={{ backgroundImage: "url('/src/assets/truss_bridge.png')", filter: "brightness(0.4)" }}
+        style={{ backgroundImage: "url('/truss_bridge.png')", filter: "brightness(0.4)" }}
       />
 
       <h1 className="text-8xl font-bold mb-2" style={{ fontFamily: "'Zuume Rough', sans-serif", color: "#1a2a3a" }}>

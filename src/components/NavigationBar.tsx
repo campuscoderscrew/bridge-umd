@@ -29,7 +29,7 @@ export default function NavigationBar() {
         <span style={{ fontWeight: 700 }}>Bridge</span>
         <span style={{ fontWeight: 400 }}>UMD</span>
         <img
-          src="/src/assets/Screenshot 2026-03-16 181502.png"
+          src="/Screenshot 2026-03-16 181502.png"
           alt=""
           style={{
             height: "clamp(0.7rem, 1.5vw, 1rem)",
