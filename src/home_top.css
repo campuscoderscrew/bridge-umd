@@ -1,0 +1,74 @@
+
+button{
+    display: flex;
+    color: white;
+    background-color: #2E4052;
+    border-radius: 11.49px;
+    padding: 12px;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    font-size:25px;
+}
+.home_contents{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 50%;
+    padding-bottom: 50px ;
+}   
+.background_image{
+    /* full-bleed background */
+    width: 100vw;
+    min-height: 100vh;
+
+    position: relative;
+    background-image: url('./assets/bay_bridge_with_land.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #85CAC0;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 120px;
+    font-weight: 700;
+    text-align: left;  
+    padding: 0;
+    margin: 10px 10px;  
+}
+.homepage-text{
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 50px;
+    text-align: left;
+}
+.home_buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+button{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    gap: 8px;
+    padding: 12px 12px ;
+    border-radius: 11.49px;
+    height: 64px;
+}
+.home_buttons{
+    position : absolute;
+    bottom: 5px;
+    padding-left: 0px;
+}
